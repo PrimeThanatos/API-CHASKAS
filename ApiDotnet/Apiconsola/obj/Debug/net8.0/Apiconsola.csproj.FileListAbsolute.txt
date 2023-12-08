@@ -1,0 +1,14 @@
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\bin\Debug\net8.0\Apiconsola.exe
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\bin\Debug\net8.0\Apiconsola.deps.json
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\bin\Debug\net8.0\Apiconsola.runtimeconfig.json
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\bin\Debug\net8.0\Apiconsola.dll
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\bin\Debug\net8.0\Apiconsola.pdb
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\Apiconsola.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\Apiconsola.AssemblyInfoInputs.cache
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\Apiconsola.AssemblyInfo.cs
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\Apiconsola.csproj.CoreCompileInputs.cache
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\Apiconsola.dll
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\refint\Apiconsola.dll
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\Apiconsola.pdb
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\Apiconsola.genruntimeconfig.cache
+C:\Users\Dtorr\Documents\dotnet (Proyectos)\ApiDotnet\Apiconsola\obj\Debug\net8.0\ref\Apiconsola.dll
