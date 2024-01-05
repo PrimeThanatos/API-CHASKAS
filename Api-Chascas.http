@@ -1,0 +1,6 @@
+@Api_Chascas_HostAddress = http://localhost:5081
+
+GET {{Api_Chascas_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
