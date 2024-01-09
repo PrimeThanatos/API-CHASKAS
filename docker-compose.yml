@@ -10,20 +10,20 @@ services:
     ports:
       - "5000:80"
     depends_on:
-      - mysql-container  # Asegura que el contenedor de MySQL esté en ejecución antes de iniciar la API
+      - postgres-container  # Asegura que el contenedor de PostgreSQL esté en ejecución antes de iniciar la API
 
-  mysql-container:
-    image: mysql:latest
-    container_name: mysql-container
+  postgres-container:
+    image: postgres:latest
+    container_name: postgres-container
     environment:
-      MYSQL_ROOT_PASSWORD: a12345
-      MYSQL_DATABASE: chascas
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin1
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin1
+      POSTGRES_DB: chascas
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres-data:/var/lib/postgresql/data
 
 volumes:
-  mysql-data:
+  postgres-data:
+
