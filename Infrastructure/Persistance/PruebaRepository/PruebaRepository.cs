@@ -5,13 +5,14 @@ using API_CHASKAS.Infrastructure.Db;
 
 namespace API_CHASKAS.Infrastructure.Persistance.PruebaRepository
 {
-    public class PruebaRepository
+    public class PruebaRepository: IPruebaRepository
     {
-        public PruebaRepository()
+        private readonly IPostgresqlConnect _dbConnect;
+        public PruebaRepository(IPostgresqlConnect dbConnect)
         {
-            
+            _dbConnect = dbConnect ?? throw new ArgumentNullException(nameof(dbConnect));
         }
-        private readonly IPostgresqlConnect _dbConnect = new DBPostgresqlConnect() ;
+       
 
         public bool healDB()
         {
@@ -69,5 +70,9 @@ namespace API_CHASKAS.Infrastructure.Persistance.PruebaRepository
             });
         }
 
+        public Task<List<Prueba>> GetUsersByRole()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
