@@ -1,6 +1,6 @@
 namespace API_CHASKAS.Domain.Entities
 {
-    public class PurshaseInvoice
+    public class PurchaseInvoice
     {
         public int PK { get; set; }
         public int FKSupplier { get; set; }

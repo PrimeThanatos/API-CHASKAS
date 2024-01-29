@@ -38,7 +38,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.CategoriesRepository
             return await Task.FromResult(result);
         }
 
-        public async Task<string> up_UpdateCustomer(Categories category)
+        public async Task<string> up_UpdateCategory(Categories category)
         {
             // Simulación de actualización de una categoría
             string result = "Categoría actualizada correctamente";
@@ -47,7 +47,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.CategoriesRepository
             return await Task.FromResult(result);
         }
 
-        public async Task<string> up_DeleteCustomer(int PkCustomer)
+        public async Task<string> up_DeleteCategory(int PkCategory)
         {
             // Simulación de eliminación de una categoría por su clave primaria
             string result = "Categoría eliminada correctamente";

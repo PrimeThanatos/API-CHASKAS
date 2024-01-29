@@ -81,10 +81,6 @@ namespace API_CHASKAS.Aplication.Services
                 PurchaseDate = dto.PurchaseDate
             };
         }
-
-        Task<InsertGenericResult> IArPriceService.InsertArPrice(DtoArPrice ArPrice)
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }

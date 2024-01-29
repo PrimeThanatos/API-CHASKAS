@@ -3,12 +3,12 @@ using API_CHASKAS.Domain.Entities.Inserts;
 
 namespace API_CHASKAS.Domain.Interfaces
 {
-    public interface IPurshaseRepository
+    public interface IPurchaseRepository
     {
-        Task<List<Purshase>> Up_GetPurshases();
-        Task<Purshase> Up_GetPurshaseByPK(int purshasePK);
-        Task<InsertGenericResult> InsertPurshase(Purshase purshase);
-        Task<string> up_UpdatePurshase(Purshase purshase);
-        Task<string> up_DeletePurshase(int pkPurshase);
+        Task<List<Purchase>> Up_GetPurchases();
+        Task<Purchase> Up_GetPurchaseByPK(int purchasePK);
+        Task<InsertGenericResult> InsertPurchase(Purchase purchase);
+        Task<string> up_UpdatePurchase(Purchase purchase);
+        Task<string> up_DeletePurchase(int pkPurchase);
     }
 }

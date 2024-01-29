@@ -5,6 +5,6 @@ namespace API_CHASKAS.Domain.Entities
         public int PK { get; set; }
         public int FkRecipe { get; set; }
         public int Number { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
     }
 }

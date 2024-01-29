@@ -1,9 +1,9 @@
 namespace API_CHASKAS.Domain.Entities
 {
-    public class Purshase
+    public class Purchase
     {
         public int PK { get; set; }
-        public int FKPurshaseInvoce { get; set; }
+        public int FKPurchaseInvoce { get; set; }
         public int FKProduct { get; set; }
         public string? Measure  { get; set; }
         public decimal Quantity { get; set; }
