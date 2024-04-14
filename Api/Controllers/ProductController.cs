@@ -1,3 +1,4 @@
+using API_CHASKAS.Api.Common;
 using API_CHASKAS.Aplication.DTOs;
 using API_CHASKAS.Aplication.Interfaces;
 using API_CHASKAS.Domain.Entities.Inserts;
@@ -26,6 +27,81 @@ namespace API_CHASKAS.Api.Controllers
         {
             List<DtoProducts> list = await _service.GetProducts();
             return Ok(list);
+        }
+
+        [HttpPost("productsbycategory")]
+        public async Task<ActionResult<List<DtoProducts>>> GetProductsByCategory([FromBody] GenericRequest request)
+        {
+
+           // List<DtoProducts> dtoProducts = await _service.GetProductsByCategory(request.Category);
+            List<DtoProducts> dtoProducts = new List<DtoProducts>{
+                new DtoProducts(){
+                     PK = 1,
+                      Cost = 10,
+                       CreatedDate = DateTime.Now,
+                        Currency = (decimal)1.0,
+                         ExchangeRate = 1,
+                          ExpirationDate = DateTime.Now,
+                           Product = "Gatorade",
+                            Size = 500,
+                             SellingPrice = 12,
+                              PreparationTime = 0,
+                               Weight = 500,
+                                FKCategory = 1
+                                
+
+                },
+                 new DtoProducts(){
+                     PK = 1,
+                      Cost = 15,
+                       CreatedDate = DateTime.Now,
+                        Currency = (decimal)1.0,
+                         ExchangeRate = 1,
+                          ExpirationDate = DateTime.Now,
+                           Product = "Coca",
+                            Size = 355,
+                             SellingPrice = 18,
+                              PreparationTime = 0,
+                               Weight = 355,
+                                FKCategory = 1
+                                 
+
+                },
+                 new DtoProducts(){
+                     PK = 1,
+                      Cost = 15,
+                       CreatedDate = DateTime.Now,
+                        Currency = (decimal)1.0,
+                         ExchangeRate = 1,
+                          ExpirationDate = DateTime.Now,
+                           Product = "Fanta",
+                            Size = 355,
+                             SellingPrice = 18,
+                              PreparationTime = 0,
+                               Weight = 355,
+                                FKCategory = 1
+                                 
+
+                },
+                 new DtoProducts(){
+                     PK = 1,
+                      Cost = 15,
+                       CreatedDate = DateTime.Now,
+                        Currency = (decimal)1.0,
+                         ExchangeRate = 1,
+                          ExpirationDate = DateTime.Now,
+                           Product = "Manzanita",
+                            Size = 355,
+                             SellingPrice = 18,
+                              PreparationTime = 0,
+                               Weight = 355,
+                                FKCategory = 1
+                                 
+
+                },
+            };
+            return Ok(dtoProducts);
+
         }
 
         [HttpGet("product/{pk}")]

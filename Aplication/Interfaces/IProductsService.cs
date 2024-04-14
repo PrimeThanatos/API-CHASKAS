@@ -1,3 +1,4 @@
+using API_CHASKAS.Aplication.DTOs;
 using API_CHASKAS.Domain.Entities.Inserts;
 
 namespace API_CHASKAS.Aplication.Interfaces
@@ -9,5 +10,7 @@ namespace API_CHASKAS.Aplication.Interfaces
         Task<InsertGenericResult> InsertProduct(Dto dto);
         Task<string> UpdateProduct(Dto dto);
         Task<string> DeleteProduct(int pk);
+        Task<List<DtoProducts>> GetProductsByCategory(string category);
+
     }
 }

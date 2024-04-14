@@ -10,5 +10,7 @@ namespace API_CHASKAS.Domain.Interfaces
         Task<InsertGenericResult> InsertProducts(Products Product);
         Task<string> up_UpdateProducts(Products Product);
         Task<string> up_DeleteProducts(int PkProduct);
+        Task<List<Products>> Up_GetProductsByCategory(string category);
+
     }
 }

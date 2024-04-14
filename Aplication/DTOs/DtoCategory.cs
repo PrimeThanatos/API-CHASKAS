@@ -4,5 +4,6 @@ namespace API_CHASKAS.Aplication.DTOs
     {
         public int Pk { get; set; }
         public string? Category  { get; set; }
+        public int Order  { get; set; }
     }
 }

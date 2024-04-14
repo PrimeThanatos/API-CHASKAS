@@ -92,5 +92,10 @@ namespace API_CHASKAS.Aplication.Services
             };
         }
 
+        public async Task<List<DtoProducts>> GetProductsByCategory(string category)
+        {
+            var listObject =await  _repository.Up_GetProductsByCategory(category);
+            return MapEntitiesToDtoList(listObject);
+        }
     }
 }

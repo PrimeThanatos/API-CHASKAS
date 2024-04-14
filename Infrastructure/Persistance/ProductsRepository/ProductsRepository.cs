@@ -55,5 +55,20 @@ namespace API_CHASKAS.Infrastructure.Persistance.ProductsRepository
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(result);
         }
+
+        public async Task<List<Products>> Up_GetProductsByCategory(string category)
+        {
+           // Simulación de obtener productos
+            List<Products> products = new List<Products>
+            {
+                new Products { PK = 1, Name = "Product 1", Size = 10, Weight = 0.5m, PreparationTime = 15, Cost = 5.0m, SellingPrice = 10.0m, Currency = 1.0m, ExchangeRate = 1.0m, CreatedDate = DateTime.Now.AddDays(-30), ExpirationDate = DateTime.Now.AddDays(30) },
+                new Products { PK = 2, Name = "Product 2", Size = 8, Weight = 0.3m, PreparationTime = 10, Cost = 3.0m, SellingPrice = 8.0m, Currency = 1.0m, ExchangeRate = 1.0m, CreatedDate = DateTime.Now.AddDays(-25), ExpirationDate = DateTime.Now.AddDays(25) },
+                // Agrega más datos ficticios según sea necesario
+            };
+
+            // Utiliza Task.FromResult para devolver una tarea completada con el resultado
+            return await Task.FromResult(products);
+        }
+
     }
 }
