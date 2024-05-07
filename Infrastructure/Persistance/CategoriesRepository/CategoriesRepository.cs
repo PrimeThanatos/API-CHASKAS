@@ -11,8 +11,8 @@ namespace API_CHASKAS.Infrastructure.Persistance.CategoriesRepository
             // Simulación de obtener categorías
             List<Categories> categories = new List<Categories>
             {
-                new Categories { Pk = 1, Description = "Category 1" },
-                new Categories { Pk = 2, Description = "Category 2" },
+                new Categories { Id = 1, Description = "Category 1" },
+                new Categories { Id = 2, Description = "Category 2" },
                 // Agrega más datos ficticios según sea necesario
             };
 
@@ -20,10 +20,10 @@ namespace API_CHASKAS.Infrastructure.Persistance.CategoriesRepository
             return await Task.FromResult(categories);
         }
 
-        public async Task<Categories> GetCategoryByPK(int id)
+        public async Task<Categories> GetCategoryById(int id)
         {
             // Simulación de obtener una categoría por su clave primaria
-            Categories category = new Categories { Pk = id, Description = "Category " + id };
+            Categories category = new Categories { Id = id, Description = "Category " + id };
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(category);
@@ -32,7 +32,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.CategoriesRepository
         public async Task<InsertGenericResult> AddCategory(Categories category)
         {
             // Simulación de inserción de una nueva categoría
-            InsertGenericResult result = new InsertGenericResult { Message = "Categoría insertada correctamente", Pk = 456 }; // Se asume un valor de clave primaria ficticio (456)
+            InsertGenericResult result = new InsertGenericResult { Message = "Categoría insertada correctamente", Id = 456 }; // Se asume un valor de clave primaria ficticio (456)
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(result);

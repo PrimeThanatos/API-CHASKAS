@@ -33,9 +33,9 @@ namespace API_CHASKAS.Api.Controllers
         }
 
         [HttpPost("arpricebypk")]
-        public async Task<ActionResult<List<DtoArPrice>>> GetArPriceByPK([FromBody] ArPriceRequest genericRequest)
+        public async Task<ActionResult<List<DtoArPrice>>> GetArPriceById([FromBody] ArPriceRequest genericRequest)
         {
-            DtoArPrice list = await _service.GetArPriceByPK(genericRequest.PK);
+            DtoArPrice list = await _service.GetArPriceById(genericRequest.Id);
             return Ok(list);
         }
 
@@ -53,7 +53,7 @@ namespace API_CHASKAS.Api.Controllers
                  
                 string result = await _service.UpdateArPrice(dto);
                 resultGeneric.Message = result;
-                resultGeneric.Pk= dto.PK;
+                resultGeneric.Id= dto.Id;
                 return Ok(resultGeneric );
 
             }catch(Exception ex){
@@ -69,9 +69,9 @@ namespace API_CHASKAS.Api.Controllers
              InsertGenericResult resultGeneric = new InsertGenericResult();
             try{
                  
-                string result = await _service.DeleteArPrice(genericRequest.PK);
+                string result = await _service.DeleteArPrice(genericRequest.Id);
                 resultGeneric.Message = result;
-                resultGeneric.Pk= genericRequest.PK;
+                resultGeneric.Id= genericRequest.Id;
                 return Ok(resultGeneric );
 
             }catch(Exception ex){

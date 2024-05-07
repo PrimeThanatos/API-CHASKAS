@@ -27,9 +27,9 @@ namespace API_CHASKAS.Aplication.Services
             return MapArPricesToDtoList(arPrices);
         }
 
-        public async Task<DtoArPrice> GetArPriceByPK(int ArPricePK)
+        public async Task<DtoArPrice> GetArPriceById(int ArPricePK)
         {
-            var arPrice = await _arPriceRepository.Up_GetArPriceByPK(ArPricePK);
+            var arPrice = await _arPriceRepository.Up_GetArPriceById(ArPricePK);
             return MapArPriceToDto(arPrice);
         }
 
@@ -60,7 +60,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new DtoArPrice
             {
-                PK = arPrice.PK,
+                Id = arPrice.Id,
                 FKProduct = arPrice.FKProduct,
                 PriceValue = arPrice.PriceValue,
                 Currency = arPrice.Currency,
@@ -73,7 +73,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new ArPrice
             {
-                PK = dto.PK,
+                Id = dto.Id,
                 FKProduct = dto.FKProduct,
                 PriceValue = dto.PriceValue,
                 Currency = dto.Currency,

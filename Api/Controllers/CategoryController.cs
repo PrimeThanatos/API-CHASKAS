@@ -28,10 +28,10 @@ namespace API_CHASKAS.Api.Controllers
             return Ok(list);
         }
 
-        [HttpGet("category/{pk}")]
-        public async Task<ActionResult<DtoCategory>> GetCategoryByPK(int pk)
+        [HttpGet("category/{id}")]
+        public async Task<ActionResult<DtoCategory>> GetCategoryById(int id)
         {
-            DtoCategory category = await _service.GetCategoryByPK(pk);
+            DtoCategory category = await _service.GetCategoryById(id);
             return Ok(category);
         }
 
@@ -51,7 +51,7 @@ namespace API_CHASKAS.Api.Controllers
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = dto.Pk
+                    Id = dto.Id
                 };
                 return Ok(resultGeneric);
             }
@@ -62,16 +62,16 @@ namespace API_CHASKAS.Api.Controllers
             }
         }
 
-        [HttpDelete("category/{pk}")]
-        public async Task<ActionResult<InsertGenericResult>> DeleteCategory(int pk)
+        [HttpDelete("category/{id}")]
+        public async Task<ActionResult<InsertGenericResult>> DeleteCategory(int id)
         {
             try
             {
-                string result = await _service.DeleteCategory(pk);
+                string result = await _service.DeleteCategory(id);
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = pk
+                    Id = id
                 };
                 return Ok(resultGeneric);
             }

@@ -28,10 +28,10 @@ namespace API_CHASKAS.Api.Controllers
             return Ok(list);
         }
 
-        [HttpGet("purchaseinvoice/{pk}")]
-        public async Task<ActionResult<DtoPurchaseInvoice>> GetPurchaseInvoiceByPK(int pk)
+        [HttpGet("purchaseinvoice/{Id}")]
+        public async Task<ActionResult<DtoPurchaseInvoice>> GetPurchaseInvoiceById(int id)
         {
-            DtoPurchaseInvoice purchaseInvoice = await _service.GetPurchaseInvoceByPK(pk);
+            DtoPurchaseInvoice purchaseInvoice = await _service.GetPurchaseInvoceById(id);
             return Ok(purchaseInvoice);
         }
 
@@ -51,7 +51,7 @@ namespace API_CHASKAS.Api.Controllers
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = dto.PK
+                    Id = dto.Id
                 };
                 return Ok(resultGeneric);
             }
@@ -62,16 +62,16 @@ namespace API_CHASKAS.Api.Controllers
             }
         }
 
-        [HttpDelete("purchaseinvoice/{pk}")]
-        public async Task<ActionResult<InsertGenericResult>> DeletePurchaseInvoice(int pk)
+        [HttpDelete("purchaseinvoice/{Id}")]
+        public async Task<ActionResult<InsertGenericResult>> DeletePurchaseInvoice(int id)
         {
             try
             {
-                string result = await _service.DeletePurchaseInvoce(pk);
+                string result = await _service.DeletePurchaseInvoce(id);
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = pk
+                    Id = id
                 };
                 return Ok(resultGeneric);
             }

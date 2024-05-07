@@ -28,10 +28,10 @@ namespace API_CHASKAS.Api.Controllers
             return Ok(list);
         }
 
-        [HttpGet("recipe/{pk}")]
-        public async Task<ActionResult<DtoRecipe>> GetRecipeByPK(int pk)
+        [HttpGet("recipe/{id}")]
+        public async Task<ActionResult<DtoRecipe>> GetRecipeById(int id)
         {
-            DtoRecipe recipe = await _service.GetRecipeByPK(pk);
+            DtoRecipe recipe = await _service.GetRecipeById(id);
             return Ok(recipe);
         }
 
@@ -51,7 +51,7 @@ namespace API_CHASKAS.Api.Controllers
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = dto.PK
+                    Id = dto.Id
                 };
                 return Ok(resultGeneric);
             }
@@ -62,16 +62,16 @@ namespace API_CHASKAS.Api.Controllers
             }
         }
 
-        [HttpDelete("recipe/{pk}")]
-        public async Task<ActionResult<InsertGenericResult>> DeleteRecipe(int pk)
+        [HttpDelete("recipe/{id}")]
+        public async Task<ActionResult<InsertGenericResult>> DeleteRecipe(int id)
         {
             try
             {
-                string result = await _service.DeleteRecipe(pk);
+                string result = await _service.DeleteRecipe(id);
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = pk
+                    Id = id
                 };
                 return Ok(resultGeneric);
             }

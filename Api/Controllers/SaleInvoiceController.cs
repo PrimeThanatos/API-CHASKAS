@@ -51,7 +51,7 @@ namespace API_CHASKAS.Api.Controllers
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = dto.PK
+                    Id = dto.Id
                 };
                 return Ok(resultGeneric);
             }
@@ -62,16 +62,16 @@ namespace API_CHASKAS.Api.Controllers
             }
         }
 
-        [HttpDelete("saleinvoice/{pk}")]
-        public async Task<ActionResult<InsertGenericResult>> DeleteSaleInvoice(int pk)
+        [HttpDelete("saleinvoice/{id}")]
+        public async Task<ActionResult<InsertGenericResult>> DeleteSaleInvoice(int id)
         {
             try
             {
-                string result = await _service.DeleteSaleInvoce(pk);
+                string result = await _service.DeleteSaleInvoce(id);
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = pk
+                    Id = id
                 };
                 return Ok(resultGeneric);
             }

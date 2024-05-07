@@ -13,14 +13,14 @@ namespace API_CHASKAS.Aplication.Services
         {
             _repository =purchaseInvoceRepository;
         }
-        public async Task<string> DeletePurchaseInvoce(int pk)
+        public async Task<string> DeletePurchaseInvoce(int id)
         {
-             return await _repository.up_DeletePurchaseInvoice(pk);
+             return await _repository.up_DeletePurchaseInvoice(id);
         }
 
-        public async Task<DtoPurchaseInvoice> GetPurchaseInvoceByPK(int pk)
+        public async Task<DtoPurchaseInvoice> GetPurchaseInvoceById(int id)
         {
-              var obj = await _repository.Up_GetPurchaseInvoiceByPK(pk);
+              var obj = await _repository.Up_GetPurchaseInvoiceByPK(id);
             return MapEntityToDto(obj);
         }
 
@@ -54,7 +54,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new DtoPurchaseInvoice
             { 
-                PK = entity.PK, 
+                Id = entity.Id, 
                 FKSupplier = entity.FKSupplier, 
                  Date = entity.Date, 
                 FKPaymentMethod = entity.FKPaymentMethod, 
@@ -71,7 +71,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new PurchaseInvoice
             {
-                 PK = dto.PK, 
+                 Id = dto.Id, 
                 FKSupplier = dto.FKSupplier, 
                  Date = dto.Date, 
                 FKPaymentMethod = dto.FKPaymentMethod, 

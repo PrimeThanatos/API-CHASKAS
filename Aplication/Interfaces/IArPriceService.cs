@@ -9,7 +9,7 @@ namespace API_CHASKAS.Aplication.Interfaces
     {
         Task<List<DtoArPrice>> GetArPricesByFKProduct(int FKProduct);
         Task<List<DtoArPrice>> GetArPricesByFKProductAndRangeOfDates(int FKProduct, DateTime start, DateTime end);
-        Task<DtoArPrice> GetArPriceByPK(int ArPricePK);
+        Task<DtoArPrice> GetArPriceById(int ArPriceId);
         Task<InsertGenericResult> InsertArPrice(DtoArPrice ArPrice);
         Task<string> UpdateArPrice(DtoArPrice ArPrice);
         Task<string> DeleteArPrice(int PkArPrice);

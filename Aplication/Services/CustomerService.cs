@@ -21,7 +21,7 @@ namespace API_CHASKAS.Aplication.Services
 
         public async Task<DtoCustomer> GetCustomerByPK(int pk)
         {
-            var obj = await _repository.Up_GetCustomerByPK(pk);
+            var obj = await _repository.Up_GetCustomerById(pk);
             return MapEntityToDto(obj);
 
         }
@@ -54,7 +54,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new DtoCustomer
             { 
-                PK = entity.PK,
+                Id = entity.Id,
                 Name = entity.Name  ,
                  Description = entity.Description  ,
                  Tel = entity.Tel  ,
@@ -68,7 +68,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new Customer
             {
-                 PK = dto.PK,
+                 Id = dto.Id,
                 Name = dto.Name  ,
                  Description = dto.Description  ,
                  Tel = dto.Tel  ,

@@ -6,7 +6,7 @@ namespace API_CHASKAS.Domain.Interfaces
     public interface IProductsRepository
     {
         Task<List<Products>> Up_GetProducts();
-        Task<Products> Up_GetProductByPK(int ProductPK);
+        Task<Products> Up_GetProductById(int id);
         Task<InsertGenericResult> InsertProducts(Products Product);
         Task<string> up_UpdateProducts(Products Product);
         Task<string> up_DeleteProducts(int PkProduct);

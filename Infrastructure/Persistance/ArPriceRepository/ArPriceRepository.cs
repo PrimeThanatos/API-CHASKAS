@@ -18,8 +18,8 @@ namespace API_CHASKAS.Infrastructure.Persistance.ArPriceRepository
             // Simulación de obtener precios por ID de producto
             List<ArPrice> prices = new List<ArPrice>
             {
-                new ArPrice { PK = 1, FKProduct = FKProduct, PriceValue = 10.5m, PurchaseDate = DateTime.Now.AddDays(-7) },
-                new ArPrice { PK = 2, FKProduct = FKProduct, PriceValue = 12.0m, PurchaseDate = DateTime.Now.AddDays(-3) },
+                new ArPrice { Id = 1, FKProduct = FKProduct, PriceValue = 10.5m, PurchaseDate = DateTime.Now.AddDays(-7) },
+                new ArPrice { Id = 2, FKProduct = FKProduct, PriceValue = 12.0m, PurchaseDate = DateTime.Now.AddDays(-3) },
                 // Agrega más datos ficticios según sea necesario
             };
 
@@ -32,7 +32,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.ArPriceRepository
             // Simulación de obtener precios por ID de producto y rango de fechas
             List<ArPrice> prices = new List<ArPrice>
             {
-                new ArPrice { PK = 3, FKProduct = FKProduct, PriceValue = 15.0m, PurchaseDate = DateTime.Now.AddDays(-1) },
+                new ArPrice { Id = 3, FKProduct = FKProduct, PriceValue = 15.0m, PurchaseDate = DateTime.Now.AddDays(-1) },
                 // Agrega más datos ficticios según sea necesario
             };
 
@@ -40,10 +40,10 @@ namespace API_CHASKAS.Infrastructure.Persistance.ArPriceRepository
             return await Task.FromResult(prices);
         }
 
-        public async Task<ArPrice> Up_GetArPriceByPK(int ArPricePK)
+        public async Task<ArPrice> Up_GetArPriceById(int ArPriceId)
         {
             // Simulación de obtener un precio por su clave primaria
-            ArPrice price = new ArPrice { PK = ArPricePK, FKProduct = 5, PriceValue = 18.5m, PurchaseDate = DateTime.Now.AddDays(-2) };
+            ArPrice price = new ArPrice { Id = ArPriceId, FKProduct = 5, PriceValue = 18.5m, PurchaseDate = DateTime.Now.AddDays(-2) };
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(price);
@@ -52,7 +52,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.ArPriceRepository
         public async Task<InsertGenericResult> InsertArPrice(ArPrice ArPrice)
         {
             // Simulación de inserción de un nuevo precio
-            InsertGenericResult result = new InsertGenericResult { Message = "Precio insertado correctamente", Pk = 123 }; // Se asume un valor de clave primaria ficticio (123)
+            InsertGenericResult result = new InsertGenericResult { Message = "Precio insertado correctamente", Id = 123 }; // Se asume un valor de clave primaria ficticio (123)
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(result);

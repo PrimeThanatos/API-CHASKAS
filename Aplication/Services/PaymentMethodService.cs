@@ -54,7 +54,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new DtoPaymentMethod
             { 
-                PK = entity.PK,
+                Id = entity.Id,
                 Payment = entity.Name  ,                            
             };
         }
@@ -63,7 +63,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new PaymentMethod
             {
-                 PK = dto.PK,
+                 Id = dto.Id,
                 Name = dto.Payment  ,
                  
             };

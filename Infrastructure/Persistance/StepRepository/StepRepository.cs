@@ -11,8 +11,8 @@ namespace API_CHASKAS.Infrastructure.Persistance.StepRepository
             // Simulación de obtener pasos
             List<Step> steps = new List<Step>
             {
-                new Step { PK = 1, FkRecipe = 501, Number = 1, Name = "Prepare Ingredients" },
-                new Step { PK = 2, FkRecipe = 502, Number = 2, Name = "Cook the Pasta" },
+                new Step { Id = 1, FkRecipe = 501, Number = 1, Name = "Prepare Ingredients" },
+                new Step { Id = 2, FkRecipe = 502, Number = 2, Name = "Cook the Pasta" },
                 // Agrega más datos ficticios según sea necesario
             };
 
@@ -20,10 +20,10 @@ namespace API_CHASKAS.Infrastructure.Persistance.StepRepository
             return await Task.FromResult(steps);
         }
 
-        public async Task<Step> Up_GetStepByPK(int pk)
+        public async Task<Step> Up_GetStepById(int id)
         {
             // Simulación de obtener un paso por su clave primaria
-            Step step = new Step { PK = pk, FkRecipe = 503, Number = 3, Name = "Bake the Pizza" };
+            Step step = new Step { Id = id, FkRecipe = 503, Number = 3, Name = "Bake the Pizza" };
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(step);
@@ -32,7 +32,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.StepRepository
         public async Task<InsertGenericResult> InsertStep(Step step)
         {
             // Simulación de inserción de un nuevo paso
-            InsertGenericResult result = new InsertGenericResult { Message = "Paso insertado correctamente", Pk = 987 }; // Se asume un valor de clave primaria ficticio (987)
+            InsertGenericResult result = new InsertGenericResult { Message = "Paso insertado correctamente", Id = 987 }; // Se asume un valor de clave primaria ficticio (987)
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(result);
@@ -47,7 +47,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.StepRepository
             return await Task.FromResult(result);
         }
 
-        public async Task<string> up_DeleteStep(int pk)
+        public async Task<string> up_DeleteStep(int id)
         {
             // Simulación de eliminación de un paso por su clave primaria
             string result = "Paso eliminado correctamente";

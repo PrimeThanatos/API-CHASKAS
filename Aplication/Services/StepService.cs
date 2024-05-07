@@ -14,14 +14,14 @@ namespace API_CHASKAS.Aplication.Services
         {
             _repository = repository;
         }
-        public async Task<string> DeleteStep(int pk)
+        public async Task<string> DeleteStep(int id)
         {
-            return await _repository.up_DeleteStep(pk);
+            return await _repository.up_DeleteStep(id);
         }
 
-        public async Task<DtoStep> GetStepByPK(int pk)
+        public async Task<DtoStep> GetStepById(int id)
         {
-             var obj = await _repository.Up_GetStepByPK(pk);
+             var obj = await _repository.Up_GetStepById(id);
             return MapEntityToDto(obj);
         }
 
@@ -55,7 +55,7 @@ namespace API_CHASKAS.Aplication.Services
             return new DtoStep
             { 
                               
-                 PK =entity.PK ,
+                 Id =entity.Id ,
                  FkRecipe =entity.FkRecipe ,
                  Number =entity.Number ,
                  Step =entity.Name 
@@ -67,7 +67,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new Step
             {
-                PK =dto.PK ,
+                Id = dto.Id ,
                  FkRecipe =dto.FkRecipe ,
                  Number =dto.Number ,
                  Name = dto.Step  

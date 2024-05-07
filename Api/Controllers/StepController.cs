@@ -28,10 +28,10 @@ namespace API_CHASKAS.Api.Controllers
             return Ok(list);
         }
 
-        [HttpGet("step/{pk}")]
-        public async Task<ActionResult<DtoStep>> GetStepByPK(int pk)
+        [HttpGet("step/{id}")]
+        public async Task<ActionResult<DtoStep>> GetStepById(int id)
         {
-            DtoStep step = await _service.GetStepByPK(pk);
+            DtoStep step = await _service.GetStepById(id);
             return Ok(step);
         }
 
@@ -51,7 +51,7 @@ namespace API_CHASKAS.Api.Controllers
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = dto.PK
+                    Id = dto.Id
                 };
                 return Ok(resultGeneric);
             }
@@ -63,15 +63,15 @@ namespace API_CHASKAS.Api.Controllers
         }
 
         [HttpDelete("step/{pk}")]
-        public async Task<ActionResult<InsertGenericResult>> DeleteStep(int pk)
+        public async Task<ActionResult<InsertGenericResult>> DeleteStep(int id)
         {
             try
             {
-                string result = await _service.DeleteStep(pk);
+                string result = await _service.DeleteStep(id);
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = pk
+                    Id = id
                 };
                 return Ok(resultGeneric);
             }

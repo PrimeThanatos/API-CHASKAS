@@ -11,8 +11,8 @@ namespace API_CHASKAS.Infrastructure.Persistance.SaleInvoiceRepository
             // Simulación de obtener facturas de venta
             List<SaleInvoice> saleInvoices = new List<SaleInvoice>
             {
-                new SaleInvoice { PK = 1, FKCustomer = 401, FKPaymentMethod = 1, Date = DateTime.Now.AddDays(-15), Total = 120, Cancel = false, Available = 1 },
-                new SaleInvoice { PK = 2, FKCustomer = 402, FKPaymentMethod = 2, Date = DateTime.Now.AddDays(-10), Total = 200, Cancel = true, Available = 1 },
+                new SaleInvoice { Id = 1, FKCustomer = 401, FKPaymentMethod = 1, Date = DateTime.Now.AddDays(-15), Total = 120, Cancel = false, Available = 1 },
+                new SaleInvoice { Id = 2, FKCustomer = 402, FKPaymentMethod = 2, Date = DateTime.Now.AddDays(-10), Total = 200, Cancel = true, Available = 1 },
                 // Agrega más datos ficticios según sea necesario
             };
 
@@ -23,7 +23,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.SaleInvoiceRepository
         public async Task<SaleInvoice> Up_GetSaleInvoiceByPK(int pk)
         {
             // Simulación de obtener una factura de venta por su clave primaria
-            SaleInvoice saleInvoice = new SaleInvoice { PK = pk, FKCustomer = 403, FKPaymentMethod = 3, Date = DateTime.Now.AddDays(-5), Total = 300, Cancel = false, Available = 1 };
+            SaleInvoice saleInvoice = new SaleInvoice { Id = pk, FKCustomer = 403, FKPaymentMethod = 3, Date = DateTime.Now.AddDays(-5), Total = 300, Cancel = false, Available = 1 };
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(saleInvoice);
@@ -32,7 +32,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.SaleInvoiceRepository
         public async Task<InsertGenericResult> InsertSaleInvoice(SaleInvoice saleInvoice)
         {
             // Simulación de inserción de una nueva factura de venta
-            InsertGenericResult result = new InsertGenericResult { Message = "Factura de venta insertada correctamente", Pk = 987 }; // Se asume un valor de clave primaria ficticio (987)
+            InsertGenericResult result = new InsertGenericResult { Message = "Factura de venta insertada correctamente", Id = 987 }; // Se asume un valor de clave primaria ficticio (987)
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(result);

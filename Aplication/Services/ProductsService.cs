@@ -21,7 +21,7 @@ namespace API_CHASKAS.Aplication.Services
 
         public async Task<DtoProducts> GetProductByPK(int pk)
         {
-              var obj = await _repository.Up_GetProductByPK(pk);
+              var obj = await _repository.Up_GetProductById(pk);
             return MapEntityToDto(obj);
         }
 
@@ -55,7 +55,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new DtoProducts
             { 
-                PK = entity.PK,
+                Id = entity.Id,
                 FKProduct = entity.FKProduct,
                 FKCategory = entity.FKCategory,
                 Product = entity.Name,
@@ -75,7 +75,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new Products
             {
-                PK = dto.PK,
+                Id = dto.Id,
                 FKProduct = dto.FKProduct,
                 FKCategory = dto.FKCategory,
                 Name = dto.Product,

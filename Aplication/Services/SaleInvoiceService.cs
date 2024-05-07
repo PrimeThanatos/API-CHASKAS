@@ -55,7 +55,7 @@ namespace API_CHASKAS.Aplication.Services
             { 
                
                
-                PK = entity.PK ,
+                Id = entity.Id,
                 FKCustomer = entity.FKCustomer ,
                 FKPaymentMethod = entity.FKPaymentMethod ,
                  Date = entity.Date ,
@@ -70,7 +70,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new SaleInvoice
             {
-                PK = dto.PK ,
+                Id = dto.Id ,
                 FKCustomer = dto.FKCustomer ,
                 FKPaymentMethod = dto.FKPaymentMethod ,
                  Date = dto.Date ,

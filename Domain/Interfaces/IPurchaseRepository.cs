@@ -6,9 +6,9 @@ namespace API_CHASKAS.Domain.Interfaces
     public interface IPurchaseRepository
     {
         Task<List<Purchase>> Up_GetPurchases();
-        Task<Purchase> Up_GetPurchaseByPK(int purchasePK);
+        Task<Purchase> Up_GetPurchaseById(int purchaseId);
         Task<InsertGenericResult> InsertPurchase(Purchase purchase);
         Task<string> up_UpdatePurchase(Purchase purchase);
-        Task<string> up_DeletePurchase(int pkPurchase);
+        Task<string> up_DeletePurchase(int idPurchase);
     }
 }

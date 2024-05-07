@@ -36,7 +36,7 @@ namespace API_CHASKAS.Api.Controllers
            // List<DtoProducts> dtoProducts = await _service.GetProductsByCategory(request.Category);
             List<DtoProducts> dtoProducts = new List<DtoProducts>{
                 new DtoProducts(){
-                     PK = 1,
+                     Id = 1,
                       Cost = 10,
                        CreatedDate = DateTime.Now,
                         Currency = (decimal)1.0,
@@ -52,7 +52,7 @@ namespace API_CHASKAS.Api.Controllers
 
                 },
                  new DtoProducts(){
-                     PK = 1,
+                     Id = 2,
                       Cost = 15,
                        CreatedDate = DateTime.Now,
                         Currency = (decimal)1.0,
@@ -68,7 +68,7 @@ namespace API_CHASKAS.Api.Controllers
 
                 },
                  new DtoProducts(){
-                     PK = 1,
+                     Id = 3,
                       Cost = 15,
                        CreatedDate = DateTime.Now,
                         Currency = (decimal)1.0,
@@ -84,7 +84,7 @@ namespace API_CHASKAS.Api.Controllers
 
                 },
                  new DtoProducts(){
-                     PK = 1,
+                     Id = 4,
                       Cost = 15,
                        CreatedDate = DateTime.Now,
                         Currency = (decimal)1.0,
@@ -104,7 +104,7 @@ namespace API_CHASKAS.Api.Controllers
 
         }
 
-        [HttpGet("product/{pk}")]
+        [HttpGet("product/{id}")]
         public async Task<ActionResult<DtoProducts>> GetProductByPK(int pk)
         {
             DtoProducts product = await _service.GetProductByPK(pk);
@@ -127,7 +127,7 @@ namespace API_CHASKAS.Api.Controllers
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = dto.PK
+                    Id = dto.Id
                 };
                 return Ok(resultGeneric);
             }
@@ -138,16 +138,16 @@ namespace API_CHASKAS.Api.Controllers
             }
         }
 
-        [HttpDelete("product/{pk}")]
-        public async Task<ActionResult<InsertGenericResult>> DeleteProduct(int pk)
+        [HttpDelete("product/{id}")]
+        public async Task<ActionResult<InsertGenericResult>> DeleteProduct(int id)
         {
             try
             {
-                string result = await _service.DeleteProduct(pk);
+                string result = await _service.DeleteProduct(id);
                 InsertGenericResult resultGeneric = new InsertGenericResult
                 {
                     Message = result,
-                    Pk = pk
+                    Id = id
                 };
                 return Ok(resultGeneric);
             }

@@ -7,7 +7,7 @@ namespace API_CHASKAS.Domain.Interfaces
     {
 
         Task<List<Customer>> Up_GetCustomers();
-        Task<Customer> Up_GetCustomerByPK(int customerPK);
+        Task<Customer> Up_GetCustomerById(int customerid);
         Task<InsertGenericResult> InsertCustomer(Customer customer);
         Task<string> up_UpdateCustomer(Customer customer);
         Task<string> up_DeleteCustomer(int PkCustomer);

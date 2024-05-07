@@ -26,9 +26,9 @@ namespace API_CHASKAS.Aplication.Services
            return MapCategoriesToDtoList(listObject);
         }
 
-        public async Task<DtoCategory> GetCategoryByPK(int pk)
+        public async Task<DtoCategory> GetCategoryById(int pk)
         {
-            var category = await _categoriesRepository.GetCategoryByPK(pk);
+            var category = await _categoriesRepository.GetCategoryById(pk);
             return MapCategoryToDto(category);
         }
 
@@ -54,7 +54,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new DtoCategory
             { 
-                Pk = category.Pk,
+                Id = category.Id,
                 Category= category.Description
             };
         }
@@ -63,7 +63,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new Categories
             {
-                Pk = dto.Pk,
+                Id = dto.Id,
                  Description= dto.Category
             };
         }

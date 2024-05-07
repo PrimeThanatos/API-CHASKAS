@@ -2,7 +2,7 @@ namespace API_CHASKAS.Aplication.DTOs
 {
     public class DtoPurchase
     {
-        public int PK { get; set; }
+        public int Id { get; set; }
         public int FKPurchaseInvoce { get; set; }
         public int FKProduct { get; set; }
         public string? Measure  { get; set; }

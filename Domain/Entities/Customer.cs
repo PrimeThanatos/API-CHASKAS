@@ -2,7 +2,7 @@ namespace API_CHASKAS.Domain.Entities
 {
     public class Customer
     {
-        public int PK { get; set; }
+        public int Id { get; set; }
         public string?  Name { get; set; }
         public string? Description { get; set; }
         public string? Tel { get; set; }

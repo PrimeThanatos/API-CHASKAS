@@ -55,7 +55,7 @@ namespace API_CHASKAS.Aplication.Services
             return new DtoSupplier
             { 
                               
-                 PK = entity.PK,
+                 Id = entity.Id,
                  Name = entity.Name,
                  Description = entity.Description,
                   RFC = entity.RFC,
@@ -71,7 +71,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new Supplier
             {
-                PK = dto.PK,
+                Id = dto.Id,
                  Name = dto.Name,
                  Description = dto.Description,
                   RFC = dto.RFC,

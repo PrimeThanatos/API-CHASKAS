@@ -2,7 +2,7 @@ namespace API_CHASKAS.Domain.Entities
 {
     public class PurchaseInvoice
     {
-        public int PK { get; set; }
+        public int Id { get; set; }
         public int FKSupplier { get; set; }
         public DateTime Date { get; set; }
         public int FKPaymentMethod { get; set; }

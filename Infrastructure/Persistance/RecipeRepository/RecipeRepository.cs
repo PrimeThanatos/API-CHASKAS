@@ -11,8 +11,8 @@ namespace API_CHASKAS.Infrastructure.Persistance.RecipeRepository
             // Simulación de obtener recetas
             List<Recipe> recipes = new List<Recipe>
             {
-                new Recipe { PK = 1, FKProduct = 301, Name = "Spaghetti Bolognese", PreparationTimeMinuts = 30, PKackage = "Package1" },
-                new Recipe { PK = 2, FKProduct = 302, Name = "Chicken Alfredo Pasta", PreparationTimeMinuts = 45, PKackage = "Package2" },
+                new Recipe { Id = 1, FKProduct = 301, Name = "Spaghetti Bolognese", PreparationTimeMinuts = 30, PKackage = "Package1" },
+                new Recipe { Id = 2, FKProduct = 302, Name = "Chicken Alfredo Pasta", PreparationTimeMinuts = 45, PKackage = "Package2" },
                 // Agrega más datos ficticios según sea necesario
             };
 
@@ -20,10 +20,10 @@ namespace API_CHASKAS.Infrastructure.Persistance.RecipeRepository
             return await Task.FromResult(recipes);
         }
 
-        public async Task<Recipe> Up_GetRecipeByPK(int pk)
+        public async Task<Recipe> Up_GetRecipeById(int pk)
         {
             // Simulación de obtener una receta por su clave primaria
-            Recipe recipe = new Recipe { PK = pk, FKProduct = 303, Name = "Vegetarian Pizza", PreparationTimeMinuts = 25, PKackage = "Package3" };
+            Recipe recipe = new Recipe { Id = pk, FKProduct = 303, Name = "Vegetarian Pizza", PreparationTimeMinuts = 25, PKackage = "Package3" };
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(recipe);
@@ -32,7 +32,7 @@ namespace API_CHASKAS.Infrastructure.Persistance.RecipeRepository
         public async Task<InsertGenericResult> InsertRecipe(Recipe recipe)
         {
             // Simulación de inserción de una nueva receta
-            InsertGenericResult result = new InsertGenericResult { Message = "Receta insertada correctamente", Pk = 654 }; // Se asume un valor de clave primaria ficticio (654)
+            InsertGenericResult result = new InsertGenericResult { Message = "Receta insertada correctamente", Id = 654 }; // Se asume un valor de clave primaria ficticio (654)
 
             // Utiliza Task.FromResult para devolver una tarea completada con el resultado
             return await Task.FromResult(result);

@@ -14,14 +14,14 @@ namespace API_CHASKAS.Aplication.Services
         {
             _repository = repository;
         }
-        public async Task<string> DeleteRecipe(int pk)
+        public async Task<string> DeleteRecipe(int Id)
         {
-            return await _repository.up_DeleteRecipe(pk);
+            return await _repository.up_DeleteRecipe(Id);
         }
 
-        public async Task<DtoRecipe> GetRecipeByPK(int pk)
+        public async Task<DtoRecipe> GetRecipeById(int id)
         {
-            var obj = await _repository.Up_GetRecipeByPK(pk);
+            var obj = await _repository.Up_GetRecipeById(id);
             return MapEntityToDto(obj);
         }
 
@@ -54,7 +54,7 @@ namespace API_CHASKAS.Aplication.Services
             return new DtoRecipe
             { 
                
-                 PK = entity.PK ,
+                 Id = entity.Id ,
                 FKProduct = entity.FKProduct ,
                 Recipe = entity.Name,     
                 PreparationTimeMinuts = entity.PreparationTimeMinuts ,
@@ -67,7 +67,7 @@ namespace API_CHASKAS.Aplication.Services
         {
             return new Recipe
             {
-                PK = dto.PK ,
+                Id = dto.Id ,
                 FKProduct = dto.FKProduct ,
                 Name = dto.Recipe,     
                 PreparationTimeMinuts = dto.PreparationTimeMinuts ,
