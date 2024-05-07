@@ -6,10 +6,10 @@ namespace API_CHASKAS.Aplication.Interfaces
     public interface IProductsService<Dto>
     {
         Task<List<Dto>> GetProducts();
-        Task<Dto> GetProductByPK(int pk);
+        Task<Dto> GetProductById(int id);
         Task<InsertGenericResult> InsertProduct(Dto dto);
         Task<string> UpdateProduct(Dto dto);
-        Task<string> DeleteProduct(int pk);
+        Task<string> DeleteProduct(int id);
         Task<List<DtoProducts>> GetProductsByCategory(string category);
 
     }

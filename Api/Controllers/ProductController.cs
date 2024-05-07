@@ -107,7 +107,7 @@ namespace API_CHASKAS.Api.Controllers
         [HttpGet("product/{id}")]
         public async Task<ActionResult<DtoProducts>> GetProductByPK(int pk)
         {
-            DtoProducts product = await _service.GetProductByPK(pk);
+            DtoProducts product = await _service.GetProductById(pk);
             return Ok(product);
         }
 

@@ -14,14 +14,14 @@ namespace API_CHASKAS.Aplication.Services
         {
             _repository = productsRepository;
         }
-        public   async Task<string> DeleteProduct(int pk)
+        public   async Task<string> DeleteProduct(int id)
         {
-           return await _repository.up_DeleteProducts(pk);
+           return await _repository.up_DeleteProducts(id);
         }
 
-        public async Task<DtoProducts> GetProductByPK(int pk)
+        public async Task<DtoProducts> GetProductById(int id)
         {
-              var obj = await _repository.Up_GetProductById(pk);
+              var obj = await _repository.Up_GetProductById(id);
             return MapEntityToDto(obj);
         }
 
